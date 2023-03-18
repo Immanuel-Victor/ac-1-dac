@@ -1,12 +1,12 @@
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
-const app:any = express()
-const port:string = process.env.PORT || '3030' 
+const app:any = express();
+const port:string = process.env.PORT || '3030' ;
 
-app.use(express.json())
+app.use(express.json());
 
 app.get("/", (req:Request, res:Response) => {
     res.send("Running");

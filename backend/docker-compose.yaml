@@ -1,0 +1,23 @@
+version: "3.5"
+services:
+  database:
+    image: postgres:alpine3.17
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: books_api
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+    - "5432:5432"
+  app:
+    build: .
+    ports:
+      - 3030:3030
+    volumes: 
+      - .:/usr/app
+    links:
+      - database
+    depends_on:
+      - database
