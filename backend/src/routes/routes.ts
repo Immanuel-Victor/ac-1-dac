@@ -12,7 +12,7 @@ appRouter.patch('/livros/:id', updateBook)
 
 //Editoras
 appRouter.get('/editoras', getAllPublishers)
-appRouter.get('/editoras/:localDeOrigem', getSpecificPublisher)
+appRouter.get('/editoras/:id', getSpecificPublisher)
 appRouter.post('/editoras', createNewPublisher)
 appRouter.patch('/editoras/:id', updatePublisher)
 

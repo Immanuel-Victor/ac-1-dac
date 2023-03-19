@@ -43,7 +43,7 @@ const Publishers = () => {
                     //returns filtered array
                     return publisher;
                 }
-            }).map((publisher) => <PublishersDetails key={publisher._id} publisher={publisher} />)}
+            }).map((publisher) => <PublishersDetails key={publisher.id} publisher={publisher} />)}
         </div>
     )
 }

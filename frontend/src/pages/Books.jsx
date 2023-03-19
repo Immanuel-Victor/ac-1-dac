@@ -41,7 +41,7 @@ const Books = () => {
                     //returns filtered array
                     return book;
                 }
-            }).map((book) => <BooksDetails key={book._id} book={book} />)}
+            }).map((book) => <BooksDetails key={book.id} book={book} />)}
         </div>
     )
 }
