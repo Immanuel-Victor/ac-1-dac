@@ -1,3 +1,5 @@
+import './books.css'
+
 const BooksDetails = ({ book }) => {
     return (
         <div className="book-details">

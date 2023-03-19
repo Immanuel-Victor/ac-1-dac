@@ -1,3 +1,5 @@
+import './publishers.css'
+
 const PublishersDetails = ({ publisher }) => {
     return (
         <div className="publisher-details">
