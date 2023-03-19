@@ -1,6 +1,7 @@
 import express from "express";
 import { appRouter } from "./routes/routes";
 import dotenv from "dotenv";
+import cors from 'cors'
 import { sequelize } from "./database/sequelize";
 
 dotenv.config();
@@ -9,6 +10,7 @@ const app:any = express();
 const port:string = process.env.PORT || '3030' ;
 
 app.use(express.json());
+app.use(cors())
 app.use(appRouter)
 
 app.get("/", (req:any, res:any) => {
