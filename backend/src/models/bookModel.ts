@@ -19,4 +19,11 @@ const Books = sequelize.define('Books',{
 }
 )
 
+async function synchronize() {
+    await Books.sync({
+        force:true
+    })
+}
+synchronize()
+
 export {Books}

@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/sequelize";
 
-const Publisher = sequelize.define('Publisher',{
+const Publishers = sequelize.define('Publishers',{
     id:{
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -18,5 +18,11 @@ const Publisher = sequelize.define('Publisher',{
     }
 }
 )
+async function synchronize() {
+    await Publishers.sync({
+        force:true
+    })
+}
+synchronize()
 
-export {Publisher}
+export {Publishers}

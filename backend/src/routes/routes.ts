@@ -1,18 +1,19 @@
 import { Router } from 'express';
-import { getAllBooks } from '../controllers/bookController';
+import { createNewBook, getAllBooks, getSpecificBook, updateBook } from '../controllers/bookController';
+import { createNewPublisher, getAllPublishers, getSpecificPublisher, updatePublisher } from '../controllers/publisherController';
 
 const appRouter:any = Router()
 
 //Livros
-appRouter.get('/', getAllBooks)
-appRouter.get('/:titulo')
-appRouter.post('/')
-appRouter.patch('/:id')
+appRouter.get('/livros', getAllBooks)
+appRouter.get('/livros/:titulo', getSpecificBook)
+appRouter.post('/livros', createNewBook)
+appRouter.patch('/livros/:id', updateBook)
 
 //Editoras
-appRouter.get('/editoras')
-appRouter.get('/editoras/:localDeOrigem')
-appRouter.post('/editoras')
-appRouter.patch('/editoras/:id')
+appRouter.get('/editoras', getAllPublishers)
+appRouter.get('/editoras/:localDeOrigem', getSpecificPublisher)
+appRouter.post('/editoras', createNewPublisher)
+appRouter.patch('/editoras/:id', updatePublisher)
 
 export { appRouter }
