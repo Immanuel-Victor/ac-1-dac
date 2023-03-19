@@ -1,19 +1,18 @@
 import { Router } from 'express';
+import { getAllBooks } from '../controllers/bookController';
 
 const appRouter:any = Router()
 
 //Livros
-appRouter.get('/')
-appRouter.get('/:id')
+appRouter.get('/', getAllBooks)
+appRouter.get('/:titulo')
 appRouter.post('/')
 appRouter.patch('/:id')
-appRouter.delete('/:id')
 
 //Editoras
 appRouter.get('/editoras')
-appRouter.get('/editoras/:id')
+appRouter.get('/editoras/:localDeOrigem')
 appRouter.post('/editoras')
 appRouter.patch('/editoras/:id')
-appRouter.delete('/editoras/:id')
 
 export { appRouter }
